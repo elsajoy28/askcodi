@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="rosaApp">
+<html ng-app="rosaApp" lang="en">
 <head>
   <meta charset="utf-8">
   <title>Rosa - Luxury Makeup & Skincare</title>
@@ -106,10 +106,10 @@
   <!-- Specific HTML content for the different views -->
   <script type="text/ng-template" id="home.html">
     <section>
-      <h2>Welcome to Rosa - Luxury Makeup & Skincare</h2>
-      <h3>Featured Products</h3>
+      <h1>Welcome to Rosa - Luxury Makeup & Skincare</h1>
+      <h2>Featured Products</h2>
       <div class="product" ng-repeat="product in featuredProducts">
-        <h4>{{product.name}}</h4>
+        <h3>{{product.name}}</h3>
         <p>{{product.description}}</p>
         <p><strong>{{product.price}}</strong></p>
       </div>
@@ -118,9 +118,9 @@
 
   <script type="text/ng-template" id="makeup.html">
     <section>
-      <h2>Explore Our Makeup Collection</h2>
+      <h1>Explore Our Makeup Collection</h1>
       <div class="product" ng-repeat="product in makeupProducts">
-        <h4>{{product.name}}</h4>
+        <h3>{{product.name}}</h3>
         <p>{{product.description}}</p>
         <p><strong>{{product.price}}</strong></p>
       </div>
@@ -129,9 +129,9 @@
 
   <script type="text/ng-template" id="skincare.html">
     <section>
-      <h2>Discover Our Skincare Essentials</h2>
+      <h1>Discover Our Skincare Essentials</h1>
       <div class="product" ng-repeat="product in skincareProducts">
-        <h4>{{product.name}}</h4>
+        <h3>{{product.name}}</h3>
         <p>{{product.description}}</p>
         <p><strong>{{product.price}}</strong></p>
       </div>
@@ -140,7 +140,7 @@
 
   <script type="text/ng-template" id="about.html">
     <section>
-      <h2>About Rosa - Luxury Makeup & Skincare</h2>
+      <h1>About Rosa - Luxury Makeup & Skincare</h1>
       <p>Learn more about our commitment to luxury and elegance.</p>
     </section>
   </script>
