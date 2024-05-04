@@ -1,148 +1,91 @@
 <!DOCTYPE html>
-<html ng-app="rosaApp" lang="en">
+<html lang="en" ng-app="rosaApp">
 <head>
-  <meta charset="utf-8">
-  <title>Rosa - Luxury Makeup & Skincare</title>
-  <style>
-    /* CSS styles for the website */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f6f3;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    
-    /* Add your CSS styles for the peach/coral color palette and floral accents here */
-    /* For example: */
-    .product {
-      background-color: #ffddcc;
-      border: 1px solid #f0b7a4;
-      padding: 10px;
-      margin: 10px;
-      border-radius: 5px;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Rosa - Luxury Makeup & Skincare</title>
+<style>
+  /* CSS styles for the website */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9ece1;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #f6d7c3;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  nav {
+    background-color: #f6d7c3;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  .product {
+    border: 1px solid #e0b0a1;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    float: left;
+    width: 200px;
+  }
+</style>
 </head>
-<body ng-controller="MainController">
+<body>
+<header>
+  <h1>Rosa - Luxury Makeup & Skincare</h1>
+</header>
 
-  <header>
-    <nav>
-      <!-- Navigation links for the website -->
-      <ul>
-        <li><a href="#/">Home</a></li>
-        <li><a href="#/makeup">Makeup</a></li>
-        <li><a href="#/skincare">Skincare</a></li>
-        <li><a href="#/about">About Us</a></li>
-      </ul>
-    </nav>
-  </header>
+<nav>
+  <a href="#/">Home</a> | <a href="#/makeup">Makeup</a> | <a href="#/skincare">Skincare</a>
+</nav>
 
-  <main>
-    <div ng-view></div>
-  </main>
+<div ng-view></div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
-  <script>
-    // AngularJS application and routing configuration
-    var app = angular.module('rosaApp', ['ngRoute']);
-    
-    app.config(function($routeProvider) {
-      $routeProvider
-        .when('/', {
-          templateUrl: 'home.html',
-          controller: 'HomeController'
-        })
-        .when('/makeup', {
-          templateUrl: 'makeup.html',
-          controller: 'MakeupController'
-        })
-        .when('/skincare', {
-          templateUrl: 'skincare.html',
-          controller: 'SkincareController'
-        })
-        .when('/about', {
-          templateUrl: 'about.html',
-          controller: 'AboutController'
-        })
-        .otherwise({ redirectTo: '/' });
-    });
-
-    // Define controllers for different views
-    app.controller('MainController', function($scope) {
-      // Controller logic for the main layout
-    });
-
-    app.controller('HomeController', function($scope) {
-      // Controller logic for the home page
-      $scope.featuredProducts = [
-        { name: 'Luxury Foundation', description: 'Achieve a flawless complexion with our luxurious foundation.', price: '$60' },
-        { name: 'Elegant Eyeshadow Palette', description: 'Create stunning eye looks with our elegant eyeshadow palette.', price: '$45' }
-      ];
-    });
-
-    app.controller('MakeupController', function($scope) {
-      // Controller logic for the makeup products page
-      $scope.makeupProducts = [
-        { name: 'Luxury Lipstick', description: 'Indulge in our luxurious lipstick collection.', price: '$30' },
-        { name: 'Glowing Blush', description: 'Add a radiant glow with our glowing blush.', price: '$25' }
-      ];
-    });
-
-    app.controller('SkincareController', function($scope) {
-      // Controller logic for the skincare products page
-      $scope.skincareProducts = [
-        { name: 'Rejuvenating Serum', description: 'Experience the benefits of our rejuvenating serum.', price: '$75' },
-        { name: 'Radiance-Boosting Mask', description: 'Revitalize your skin with our radiance-boosting mask.', price: '$40' }
-      ];
-    });
-
-    app.controller('AboutController', function($scope) {
-      // Controller logic for the about us page
-    });
-  </script>
-
-  <!-- Specific HTML content for the different views -->
-  <script type="text/ng-template" id="home.html">
-    <section>
-      <h1>Welcome to Rosa - Luxury Makeup & Skincare</h1>
-      <h2>Featured Products</h2>
-      <div class="product" ng-repeat="product in featuredProducts">
-        <h3>{{product.name}}</h3>
-        <p>{{product.description}}</p>
-        <p><strong>{{product.price}}</strong></p>
-      </div>
-    </section>
-  </script>
-
-  <script type="text/ng-template" id="makeup.html">
-    <section>
-      <h1>Explore Our Makeup Collection</h1>
-      <div class="product" ng-repeat="product in makeupProducts">
-        <h3>{{product.name}}</h3>
-        <p>{{product.description}}</p>
-        <p><strong>{{product.price}}</strong></p>
-      </div>
-    </section>
-  </script>
-
-  <script type="text/ng-template" id="skincare.html">
-    <section>
-      <h1>Discover Our Skincare Essentials</h1>
-      <div class="product" ng-repeat="product in skincareProducts">
-        <h3>{{product.name}}</h3>
-        <p>{{product.description}}</p>
-        <p><strong>{{product.price}}</strong></p>
-      </div>
-    </section>
-  </script>
-
-  <script type="text/ng-template" id="about.html">
-    <section>
-      <h1>About Rosa - Luxury Makeup & Skincare</h1>
-      <p>Learn more about our commitment to luxury and elegance.</p>
-    </section>
-  </script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+<script>
+  var app = angular.module('rosaApp', ['ngRoute']);
+  
+  app.config(function($routeProvider) {
+    $routeProvider
+      .when('/', {
+        template: '<h2>Welcome to Rosa - Luxury Makeup & Skincare</h2>'
+      })
+      .when('/makeup', {
+        template: `
+          <div class="product">
+            <h3>Makeup Product 1</h3>
+            <p>Description of Makeup Product 1</p>
+          </div>
+          <div class="product">
+            <h3>Makeup Product 2</h3>
+            <p>Description of Makeup Product 2</p>
+          </div>
+        `
+      })
+      .when('/skincare', {
+        template: `
+          <div class="product">
+            <h3>Skincare Product 1</h3>
+            <p>Description of Skincare Product 1</p>
+          </div>
+          <div class="product">
+            <h3>Skincare Product 2</h3>
+            <p>Description of Skincare Product 2</p>
+          </div>
+        `
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+  });
+</script>
 </body>
 </html>
+
